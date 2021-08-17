@@ -3,8 +3,6 @@ import os, sys
 import requests
 import json
 
-from requests.models import parse_url
-
 #llamar en caso de no tener los archivos .csv
 
 def Enfermos():
