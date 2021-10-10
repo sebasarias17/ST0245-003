@@ -1,5 +1,4 @@
 import urllib.request
-from tkinter import filedialog
 import os, sys
 import requests
 import json
@@ -32,14 +31,16 @@ def Sanos():
 
 
 #Crear una capeta llamada comprimidos_enfermos para almacenar las imagenes comprimidas del ganado
-path = "./enfermos"
+path = "./"
 archivos = os.listdir(path)
 
 def comprimir(archivos):
     contador = 0
     for line in archivos:
         print (line)
-        if line.startswith('©'):
+        if line is ('ช่วยหมา.jpg'):
+            contador+=1        
+        elif line.startswith('©'):
             contador+=1
         elif line.endswith('.webp'):
             contador+=1
@@ -48,15 +49,15 @@ def comprimir(archivos):
         elif line.endswith('.py'):
             contador+=1
         else:
-            print(line)
             print("else")
             img = cv2.imread(line)
+            print(img.shape)
             scale_percent = 0.50
             width = int(img.shape[1]*scale_percent)
             heigth = int(img.shape[0]*scale_percent)
-            dimension=(width,heigth)
+            dimension = (width,heigth)
 
-            resized=cv2.resize(img,dimension,interpolation=cv2.INTER_CUBIC)
+            resized = cv2.resize(img,dimension,interpolation=cv2.INTER_CUBIC)
 
             print(resized.shape)
             ruta_destino = os.path.join("./../comprimidos_enfermos", 'resized_'+line)
@@ -66,8 +67,6 @@ def comprimir(archivos):
             cv2.destroyAllWindows()
     print("No se pudieron comprimir",contador,"Imagenes")
             
-
-
 
 
 
