@@ -29,7 +29,7 @@ def Sanos():
         urllib.request.urlretrieve(i["download_url"], ruta_destino)
         b += 1
 
-
+#Para correr el programa, el archivo debe estar en la carpeta de las imagenes con el ganado sano
 #Crear una capeta llamada comprimidos_sanos para almacenar las imagenes comprimidas del ganado
 path = "./"
 archivos = os.listdir(path)
