@@ -62,7 +62,6 @@ def comprimir(archivos):
             ruta_destino = os.path.join("./../comprimidos_enfermos", 'resized_'+line)
             cv2.imwrite(ruta_destino, resized)
 
-            cv2.waitKey(0)
             cv2.destroyAllWindows()
     print("No se pudieron comprimir",contador,"Imagenes")
             
