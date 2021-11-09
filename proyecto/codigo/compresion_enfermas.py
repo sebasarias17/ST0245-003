@@ -2,7 +2,6 @@ import urllib.request
 import os, sys
 import requests
 import json
-import csv
 import cv2
 
 #llamar en caso de no tener las imagenes
