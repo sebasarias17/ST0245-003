@@ -21,19 +21,19 @@ def Sanos():
 
 
 #Ingresar la direccion en donde se encunetran los archivos sanos en las comillas Ej."C:\Users\user\Documentos\Sano"
-path = ""
+path_Sano = ""
 archivos = os.listdir(path)
 
 #Ingresar la direccion en donde se encuentran los archivos enfermos en las comilla Ej."C:\Users\user\Documentos\Enfermo"
-path = ""
+path_Enfermo = ""
 archivos = os.listdir(path)
 
 list_Enfermos = []
-for files in archivos:
+for path_Sano in archivos:
     list_Enfermos.append(files)
     
 list_Sano = []
-for files in archivos:
+for path_Enfermo in archivos:
     list_Sano.append(files)
 
 def __main__():
